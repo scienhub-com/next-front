@@ -1,14 +1,13 @@
 "use client"
 import * as React from "react"
 import { useTheme } from "next-themes"
-import { isSSR } from "@/lib/utils";
+import { isSSR } from "@/lib/utils"
 
-
-import { SVGProps } from "react";
+import { SVGProps } from "react"
 
 type IconSvgProps = SVGProps<SVGSVGElement> & {
-    size?: number;
-};
+    size?: number
+}
 
 const MoonFilledIcon = ({
     size = 24,
@@ -30,7 +29,7 @@ const MoonFilledIcon = ({
             fill="currentColor"
         />
     </svg>
-);
+)
 
 const SunFilledIcon = ({
     size = 24,
@@ -52,8 +51,7 @@ const SunFilledIcon = ({
             <path d="M12 22.96a.969.969 0 01-1-.96v-.08a1 1 0 012 0 1.038 1.038 0 01-1 1.04zm7.14-2.82a1.024 1.024 0 01-.71-.29l-.13-.13a1 1 0 011.41-1.41l.13.13a1 1 0 010 1.41.984.984 0 01-.7.29zm-14.28 0a1.024 1.024 0 01-.71-.29 1 1 0 010-1.41l.13-.13a1 1 0 011.41 1.41l-.13.13a1 1 0 01-.7.29zM22 13h-.08a1 1 0 010-2 1.038 1.038 0 011.04 1 .969.969 0 01-.96 1zM2.08 13H2a1 1 0 010-2 1.038 1.038 0 011.04 1 .969.969 0 01-.96 1zm16.93-7.01a1.024 1.024 0 01-.71-.29 1 1 0 010-1.41l.13-.13a1 1 0 011.41 1.41l-.13.13a.984.984 0 01-.7.29zm-14.02 0a1.024 1.024 0 01-.71-.29l-.13-.14a1 1 0 011.41-1.41l.13.13a1 1 0 010 1.41.97.97 0 01-.7.3zM12 3.04a.969.969 0 01-1-.96V2a1 1 0 012 0 1.038 1.038 0 01-1 1.04z" />
         </g>
     </svg>
-);
-
+)
 
 export function ThemeSwitch() {
     const { theme, setTheme } = useTheme()
@@ -67,7 +65,11 @@ export function ThemeSwitch() {
                 className="group/toggle p-0 h-full w-full"
                 onClick={toggleTheme}
             >
-                { theme === "dark" || isSSR ?  <SunFilledIcon size={24} /> : <MoonFilledIcon size={24} /> }
+                {theme === "dark" || isSSR ? (
+                    <SunFilledIcon size={24} />
+                ) : (
+                    <MoonFilledIcon size={24} />
+                )}
             </button>
         </>
     )

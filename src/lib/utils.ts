@@ -5,4 +5,4 @@ export function cn(...inputs: ClassValue[]) {
     return twMerge(clsx(inputs))
 }
 
-export const isSSR = typeof window === "undefined";
+export const isSSR = typeof window === "undefined"

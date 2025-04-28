@@ -1,13 +1,13 @@
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
+import { dirname } from "path"
+import { fileURLToPath } from "url"
+import { FlatCompat } from "@eslint/eslintrc"
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
 const compat = new FlatCompat({
     baseDirectory: __dirname,
-});
+})
 
 const eslintConfig = [
     {
@@ -18,16 +18,19 @@ const eslintConfig = [
             "**/build/**",
             "**/dist/**",
             "**/coverage/**",
-            "./src/components/ui/**"
+            "./src/components/ui/**",
         ],
         rules: {
-            "@typescript-eslint/no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
-            "indent": ["error", 4],
-            "quotes": ["error", "double"],
-            "no-console": ["warn", { "allow": ["warn", "error"] }],
-        }
+            "@typescript-eslint/no-unused-vars": [
+                "error",
+                { vars: "all", args: "after-used", ignoreRestSiblings: false },
+            ],
+            indent: ["error", 4],
+            quotes: ["error", "double"],
+            "no-console": ["warn", { allow: ["warn", "error"] }],
+        },
     },
     ...compat.extends("next/core-web-vitals", "next/typescript"),
-];
+]
 
-export default eslintConfig;
+export default eslintConfig
