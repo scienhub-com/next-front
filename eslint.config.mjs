@@ -18,6 +18,7 @@ const eslintConfig = [
             "**/build/**",
             "**/dist/**",
             "**/coverage/**",
+            "./src/components/ui/**"
         ],
         rules: {
             "indent": ["error", 4],
