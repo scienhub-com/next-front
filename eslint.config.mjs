@@ -1,6 +1,7 @@
 import { dirname } from "path"
 import { fileURLToPath } from "url"
 import { FlatCompat } from "@eslint/eslintrc"
+import { li } from "motion/react-client"
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
@@ -28,6 +29,7 @@ const eslintConfig = [
             indent: ["error", 4],
             quotes: ["error", "double"],
             "no-console": ["warn", { allow: ["warn", "error"] }],
+            "linebreak-style": ["error", "unix"],
         },
     },
     ...compat.extends("next/core-web-vitals", "next/typescript"),

@@ -62,7 +62,7 @@ export function ThemeSwitch() {
         <>
             <button
                 style={{ cursor: "pointer" }}
-                className="group/toggle p-0 h-full w-full"
+                className="group/toggle h-full w-full p-0"
                 onClick={toggleTheme}
             >
                 {theme === "dark" || isSSR ? (

@@ -9,7 +9,10 @@ const config = {
     tabWidth: 4,
     useTabs: false,
     semi: false,
+    arrowParens: "always",
+    printWidth: 80,
     singleQuote: false,
+    plugins: ["prettier-plugin-tailwindcss"],
 }
 
 export default config
