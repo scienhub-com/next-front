@@ -1,0 +1,14 @@
+"use client"
+
+import * as React from "react"
+import type { ThemeProviderProps  } from "next-themes"
+// https://github.com/shadcn-ui/ui/issues/5552#issuecomment-2435053678
+import dynamic from 'next/dynamic'
+const NextThemesProvider = dynamic(
+    () => import('next-themes').then((e) => e.ThemeProvider),
+    { ssr: false }
+)
+
+export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
+    return <NextThemesProvider {...props}>{children}</NextThemesProvider>
+}
