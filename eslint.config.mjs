@@ -21,7 +21,10 @@ const eslintConfig = [
             "./src/components/ui/**"
         ],
         rules: {
+            "@typescript-eslint/no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
             "indent": ["error", 4],
+            "quotes": ["error", "double"],
+            "no-console": ["warn", { "allow": ["warn", "error"] }],
         }
     },
     ...compat.extends("next/core-web-vitals", "next/typescript"),
